@@ -1,0 +1,12 @@
+https://kafka.apache.org/
+
+Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
+
+Download:
+https://kafka.apache.org/downloads
+
+On Linux:
+wget https://dlcdn.apache.org/kafka/3.1.1/kafka_2.13-3.1.1.tgz
+tar xvf ./kafka_2.13-3.1.1.tgz -C ./kafka_core
+rm -r kafka_2.13-3.1.1/
+sha256sum kafka_2.13-3.1.1.tgz
