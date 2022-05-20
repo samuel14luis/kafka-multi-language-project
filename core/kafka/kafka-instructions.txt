@@ -1,0 +1,35 @@
+// Iniciar zookeeper
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+// Iniciar Kafka
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+// Listar topics
+.\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+// Crear topic
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+.\bin\windows\kafka-topics.bat --describe --bootstrap-server localhost:9092,localhost:9093,localhost:9094
+.\bin\windows\kafka-topics.bat --describe --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic cars
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --replication-factor 3 --partitions 5 --topic numbers
+
+
+// Crear producer
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+// Crear consumer
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+
+// List brokers
+.\bin\windows\zookeeper-shell.bat localhost:2181 ls /brokers/ids
+.\bin\windows\zookeeper-shell.bat localhost:2181 get /brokers/ids/0
+
+// Detener Kafka
+.\bin\windows\kafka-server-stop.bat
+
+// Detener zookeeper
+.\bin\windows\zookeeper-server-stop.bat
+
+https://www.youtube.com/watch?v=Zq8aMrRnvQE
+https://github.com/conduktor/kafka-stack-docker-compose
