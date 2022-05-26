@@ -1,8 +1,1 @@
-Hola, Mundo!
-
-Soy un archivo de texto
-
-Esta es la línea 5
-Línea 6
-
-Esta es la línea 8
+Hola, Samuel!
