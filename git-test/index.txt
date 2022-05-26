@@ -1,5 +1,0 @@
-Hola, Mundo!
-
-Soy un archivo de texto
-
-Esta es la línea 5
